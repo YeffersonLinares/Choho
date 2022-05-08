@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('asesores', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 60);
+            $table->string('name');
             $table->integer('cliente_asignados');
             $table->integer('total_pedidos');
             $table->string('email')->unique();
