@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Asesor;
+use App\Models\ProductoPedido;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -38,9 +39,9 @@ class AsesorController extends Controller
                                         return [
                                             'id_producto' => $pedido->id,
                                             'tipo' => $pedido->tipo,
-                                            'cantidad' => $pedido->cantidad,
+                                            'cantidad' => $this->cantidad($pedido->pivot->id_pedido, $pedido->pivot->id_producto),
                                             'valor_unitario' => $pedido->valor_unitario,
-                                            'total' => $pedido->cantidad * $pedido->valor_unitario,
+                                            'total' => $this->cantidad($pedido->pivot->id_pedido, $pedido->pivot->id_producto) * $pedido->valor_unitario,
                                         ];
                                     })
                                 ];
@@ -52,5 +53,12 @@ class AsesorController extends Controller
         return response()->json([
             'asesores' => $asesores,
         ]);
+    }
+
+    public function cantidad($id1, $id2)
+    {
+        return ProductoPedido::where('id_pedido', $id1)
+            ->where('id_producto', $id2)
+            ->first()->cantidad;
     }
 }

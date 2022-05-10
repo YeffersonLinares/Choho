@@ -2,10 +2,8 @@
 
 namespace Database\Seeders;
 
-use App\Models\cliente;
 use App\Models\Pedidos;
-use App\Models\User;
-use Database\Factories\PedidoFactory;
+use App\Models\Producto;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,11 +15,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call([
-        //     PedidoFactory::class,
-        // ]);
-        // Pedidos::factory(5)->create();
-        // cliente::factory(5)->create();
+        Pedidos::factory(5)->create();
+        Producto::factory(5)->create();
+        $this->call(ProductoFactorySeed::class);
         // User::factory(5)->create();
+        // cliente::factory(5)->create();
     }
 }

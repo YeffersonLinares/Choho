@@ -16,9 +16,7 @@ return new class extends Migration
         Schema::create('productos', function (Blueprint $table) {
             $table->id();
             $table->string("tipo");
-            $table->integer("cantidad");
             $table->integer("valor_unitario");
-            $table->integer("total");
             $table->timestamps();
         });
     }

@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
  */
-class PedidoFactory extends Factory
+class PedidosFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,7 +18,7 @@ class PedidoFactory extends Factory
     public function definition()
     {
         return [
-            'total_productos' => 50,
+            'total_productos' => 2,
             'total_pedido' => 40000,
             'estado' => "Pagado",
             'fecha_de_pago' => now(),

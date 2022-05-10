@@ -2,13 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Cliente>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Producto>
  */
-class ClienteFactory extends Factory
+class ProductoFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -18,9 +17,9 @@ class ClienteFactory extends Factory
     public function definition()
     {
         return [
-            'name' => $this->faker->name(),
-            'total_pedidos' => 1,
-            'codigo_asesor' => User::factory(),
+            'tipo' => $this->faker->city(),
+            // 'valor_unitario' => random_int(1000, 20000),
+            'valor_unitario' => 20000,
         ];
     }
 }
