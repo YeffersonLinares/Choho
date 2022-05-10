@@ -16,6 +16,6 @@ Pasos para correr el proyecto
     con la ubicación de nuestra base de datos y demás parametros para conectar a la base de datos de manera exitosa.
 5. Ejecutando una terminal en la carpeta /Choho correr el comando --> php artisan key:generate
 6. Al estar en la carpeta /Choho ejecutar el comando --> composer update
-7. Correr el comando --> php artisan migrate --seed
+7. Correr el comando --> php artisan migrate:fresh --seed
 8. cuando se termine de procesar el comando anteriormente ejecutado escribir en esa misma terminal --> php artisan serve --port=8000
 9. Abrir el navegador de preferencia y colocar la siguiente url --> 127.0.0.1:8000/api/asesor-index
